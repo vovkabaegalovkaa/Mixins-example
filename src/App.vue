@@ -1,26 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <app-alert 
+      v-if="alertStatus" 
+      :title="'Attention!'" 
+      :content="'Thanks for attention'" 
+      :type="'good'" 
+      :closable="true" 
+      @closeAlert="close">
+    </app-alert>
+    <div class="el">
+      <button class="btn accept" @click="toggleAlert">{{ getStatus }} сообщение</button>
+    </div>
+  </div>
+  <app-block></app-block>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import AppAlert from './components/AppAlert.vue';
+import AppBlock from './components/AppBlock.vue';
+import AlertMixin from './mixins/AlertMixin';
 export default {
-  name: 'App',
+  mixins: [AlertMixin],//миксинов можно указать сколько угодно
   components: {
-    HelloWorld
-  }
+    'app-alert': AppAlert,
+    'app-block': AppBlock,
+  },
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+

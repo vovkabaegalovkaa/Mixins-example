@@ -1,0 +1,41 @@
+body{
+    background-color: rgb(123, 56, 142);
+}
+.container{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 8px;
+}   
+.el{
+    background-color: aliceblue;
+    padding: 1%;
+    border-radius: 5px;
+}
+.btn{
+    border-radius: 5px;
+    height: 40px;
+    width: fit-content;
+    font-size: 12pt;
+    border-style: solid;
+}
+.accept{
+    border: 0px;
+    background-color: rgb(85, 208, 167);
+    color: aliceblue;
+}
+.alert{
+    padding: 1rem 1.5rem;
+    border-left-width: .5rem;
+    border-left-style: solid;
+    margin: 1rem 0;
+    position: relative;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    background-color: aliceblue;
+}
+.good{
+    border-color: rgb(85, 208, 167);
+}
+.bad{
+    border-color: rgb(208, 85, 85);
+}
